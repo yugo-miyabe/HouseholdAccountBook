@@ -9,9 +9,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
+import com.google.firebase.auth.FirebaseAuth
 import com.yuni.myportforlio.addUI.AddActivity
 import com.yuni.myportforlio.drawerUI.AnalysisActivity
 import com.yuni.myportforlio.drawerUI.BalanceActivity
@@ -32,14 +34,28 @@ class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
     private var toMonthMoney : Long = 0
     //"yyyy/MM/dd"のフォーマットを取得
     private val dateFormat = SimpleDateFormat("yyyy/MM/dd")
+    private lateinit var auth: FirebaseAuth
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //Get Firebase auth instance
+        auth = FirebaseAuth.getInstance()
+
+        if (auth.currentUser == null) {
+            startActivity(Intent(this@MainActivity,LoginActivity::class.java))
+            /*
+            if (auth.currentUser!!.isEmailVerified) {
+                startActivity(Intent(this@LoginActivity, MainActivity::class.java))
+                finish()
+            }
+            */
+        }
+
         val toolbar: Toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
-
         val drawer = findViewById<View>(R.id.drawer_layout) as DrawerLayout
         val toggle = ActionBarDrawerToggle(
             this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close
