@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "545987197035",
+    "firebase_url": "https://portfoliomyapp.firebaseio.com",
+    "project_id": "portfoliomyapp",
+    "storage_bucket": "portfoliomyapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:545987197035:android:f32f75426426f633b6d92e",
+        "android_client_info": {
+          "package_name": "com.yuni.myportforlio"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "545987197035-7out5dch38t4lu3e69nhf1ogc9p5imfe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBH2zxX2lmHSzbZ77VZeS-1xK5yOUr69yQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "545987197035-7out5dch38t4lu3e69nhf1ogc9p5imfe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
