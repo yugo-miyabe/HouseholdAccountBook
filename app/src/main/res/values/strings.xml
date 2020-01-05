@@ -118,6 +118,10 @@
     <string name="loginFailed">Login 失敗</string>
     <string name="savedButton">保存しました</string>
     <string name="deletedButton">削除しました</string>
+    <string name="test_mail">メールアドレス:test@test.com</string>
+    <string name="test_password">パスワード:password</string>
+    <string name="user">ユーザー登録</string>
+    <string name="test_user">下記ユーザーでログインできます</string>
 
 </resources>
 
