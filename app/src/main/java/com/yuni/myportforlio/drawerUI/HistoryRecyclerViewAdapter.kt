@@ -1,4 +1,4 @@
-package com.yuni.myportforlio
+package com.yuni.myportforlio.drawerUI
 
 import android.content.Intent
 import android.graphics.Color
@@ -7,10 +7,13 @@ import androidx.recyclerview.widget.RecyclerView
 import io.realm.RealmResults
 import android.text.format.DateFormat
 import android.view.LayoutInflater.*
+import com.yuni.myportforlio.R
+import com.yuni.myportforlio.ViewHolder
+import com.yuni.myportforlio.WalletDB
 import com.yuni.myportforlio.addUI.AddActivity
 
 //Realmのクエリの実行結果であるRealmResultsを受け取る
-class CustomRecyclerViewAdapter(realmResults: RealmResults<WalletDB>) : RecyclerView.Adapter<ViewHolder>() {
+class HistoryRecyclerViewAdapter(realmResults: RealmResults<WalletDB>) : RecyclerView.Adapter<ViewHolder>() {
     private val rResults: RealmResults<WalletDB> = realmResults
 
     override fun onCreateViewHolder(parent: ViewGroup, position: Int): ViewHolder {

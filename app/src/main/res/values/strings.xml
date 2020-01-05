@@ -7,6 +7,7 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
+    <!--ドロワー-->
     <string name="menu_home">ホーム</string>
     <string name="menu_history">履歴</string>
     <string name="menu_analysis">分析</string>
@@ -38,6 +39,53 @@
         <item>その他</item>
     </string-array>
 
+    <!--AddActivity-->
+    <string name="use_Money">使用した金額</string>
+    <string name="dateText">日付</string>
+    <string name="save">保存</string>
+    <string name="delete">削除</string>
+    <string name="incomeAdd">収入追加</string>
+    <string name="spendingAdd">支出追加</string>
+    <string name="itemSpendingText">項目</string>
+    <string name="remarksSpendingText">内容</string>
+    <string name="moneyString">金額</string>
+    <string name="zero">0</string>
+    <string name="memo">メモ</string>
+    <string name="recordButton">記録する</string>
+    <string name="deleteButton">削除する</string>
+    <string name="monthlySpending">月の出費</string>
+
+    <string name="ExpenditureTrendsString">支出推移</string>
+    <string name="TotalExpenditure">総支出</string>
+
+    <string name="SpendingString">支出</string>
+    <string name="IncomeString">収入</string>
+    <string name="dataReset">データリセット</string>
+
+    <!--MainActivity-->
+    <string name="totalBalance">総残高</string>
+    <string name="thisMonthString">今月</string>
+    <string name="thisWeekString">今週</string>
+    <string name="todayString">今日</string>
+    <string name="spendingThisMonth">今月の出費</string>
+    <string name="foodExpensesString">食費</string>
+    <string name="dailyGoodsString">日用雑貨</string>
+    <string name="transportationExpenses">交通費</string>
+    <string name="datingExpensesString">交際費</string>
+    <string name="educationCultivationString">教育・教養</string>
+    <string name="beautyClothingString">美容.衣類</string>
+    <string name="otherString">その他</string>
+    <string name="menu">メニュー</string>
+    
+    <!--LoginActivity-->
+    <string name="mailAddress">メールアドレス</string>
+    <string name="password">パスワード</string>
+    <string name="loginText">ログイン</string>
+    <string name="unregistered">登録がお済みで無い方はこちら</string>
+
+    <!--SingActivity-->
+    <string name="CheckBox">利用規約に同意します</string>
+    <string name="register">登録する</string>
     <!--支払項目-->
     <string name="foodExpenses">食費</string>
     <string name="dailyGoods">日用雑貨</string>
@@ -52,41 +100,23 @@
     <string name="extraIncome">臨時収入</string>
     <string name="otherIncome">その他</string>
 
-
-    <string name="use_Money">使用した金額</string>
-    <string name="dateText">日付</string>
-    <string name="save">保存</string>
-    <string name="delete">削除</string>
-
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="incomeAdd">収入追加</string>
-    <string name="spendingAdd">支出追加</string>
-    <string name="itemSpendingText">項目</string>
-    <string name="remarksSpendingText">内容</string>
-    <string name="moneyString">金額</string>
-    <string name="ExpenditureTrendsString">支出推移</string>
-    <string name="TotalExpenditure">総支出</string>
-
-    <string name="SpendingString">支出</string>
-    <string name="IncomeString">収入</string>
-    <string name="dataReset">データリセット</string>
-    <string name="totalBalance">総残高</string>
-    <string name="thisMonthString">今月</string>
-    <string name="thisWeekString">今週</string>
-    <string name="todayString">今日</string>
-    <string name="spendingThisMonth">今月の出費</string>
-    <string name="foodExpensesString">食費</string>
-    <string name="dailyGoodsString">日用雑貨</string>
-    <string name="transportationExpenses">交通費</string>
-    <string name="datingExpensesString">交際費</string>
-    <string name="educationCultivationString">教育・教養</string>
-    <string name="beautyClothingString">美容.衣類</string>
-    <string name="otherString">その他</string>
-    <string name="menu">メニュー</string>
-
     <string name="yenMark">¥</string>
 
-    <string name="under">HOGE<u>UNDERLINED</u>FUGA</string>
+    <!--アプリケーションタイトル-->
+    <string name="addTitle">収支追加</string>
+    <string name="analysisTitle">分析</string>
+    <string name="balanceTitle">分析</string>
+    <string name="historyTitle">履歴</string>
+    <string name="singTitle">アカウント登録</string>
+    <string name="loginTitle">ログイン画面</string>
+
+    <!--ToastString-->
+    <string name="singSuccessful">SignUp 成功</string>
+    <string name="singFailed">SignUp 失敗</string>
+    <string name="loginSuccessful">Login 成功</string>
+    <string name="loginFailed">Login 失敗</string>
+    <string name="savedButton">保存しました</string>
+    <string name="deletedButton">削除しました</string>
 
 </resources>
 

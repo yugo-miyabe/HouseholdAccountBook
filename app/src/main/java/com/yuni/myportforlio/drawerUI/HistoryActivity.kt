@@ -6,7 +6,6 @@ import android.os.Bundle
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.yuni.myportforlio.CustomRecyclerViewAdapter
 import com.yuni.myportforlio.R
 import com.yuni.myportforlio.WalletDB
 import io.realm.Realm
@@ -15,7 +14,7 @@ import kotlinx.android.synthetic.main.activity_history.*
 
 class HistoryActivity : AppCompatActivity() {
     private lateinit var realm: Realm
-    private lateinit var adapter: CustomRecyclerViewAdapter
+    private lateinit var adapter: HistoryRecyclerViewAdapter
     private lateinit var layoutManager: RecyclerView.LayoutManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,7 +27,7 @@ class HistoryActivity : AppCompatActivity() {
         super.onStart()
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.title = "履歴"
+        supportActionBar?.title = getString(R.string.historyTitle)
         realm = Realm.getDefaultInstance()
 
         val realmResults = realm.where(WalletDB::class.java)
@@ -38,7 +37,9 @@ class HistoryActivity : AppCompatActivity() {
         layoutManager = LinearLayoutManager(null)
         historyView.layoutManager = layoutManager
 
-        adapter = CustomRecyclerViewAdapter(realmResults)
+        adapter = HistoryRecyclerViewAdapter(
+            realmResults
+        )
         historyView.adapter = this.adapter
 
     }

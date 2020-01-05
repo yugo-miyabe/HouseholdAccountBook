@@ -12,7 +12,7 @@ class CustomApplication : Application() {
         val config = RealmConfiguration.Builder().build()
 
         // 全件削除
-        Realm.deleteRealm(config)
+        //Realm.deleteRealm(config)
         Realm.setDefaultConfiguration(config)
         AndroidThreeTen.init(this)  //ThreeTenABPの初期化
     }

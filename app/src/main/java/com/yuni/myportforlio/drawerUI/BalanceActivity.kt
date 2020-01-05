@@ -1,5 +1,6 @@
 package com.yuni.myportforlio.drawerUI
 
+import android.annotation.SuppressLint
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -45,7 +46,7 @@ class BalanceActivity : AppCompatActivity() {
         calendar.clear()
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.title = "残高"
+        supportActionBar?.title = getString(R.string.balanceTitle)
 
         //現在の月の何日目かを取得
         val monthNum = calendar.get(Calendar.DAY_OF_MONTH)
@@ -86,7 +87,9 @@ class BalanceActivity : AppCompatActivity() {
             }
         }
         val balanceMoneyText = sumIncome - sumSpring
-        balanceMoney.text = "￥$balanceMoneyText"
+        val balanceMoneyString = getString(R.string.yenMark) + balanceMoneyText
+
+        balanceMoney.text = balanceMoneyString
 
         //グラフの作成
         createLine()
@@ -187,7 +190,6 @@ class BalanceActivity : AppCompatActivity() {
             setDrawCircleHole(true)
             // 点の値非表示
             setDrawValues(false)
-
             // 線の太さ
             lineWidth = 2f
         }

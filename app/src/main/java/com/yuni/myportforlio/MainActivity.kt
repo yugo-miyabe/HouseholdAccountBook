@@ -9,9 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import android.view.MenuItem
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
-import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
 import com.google.firebase.auth.FirebaseAuth
 import com.yuni.myportforlio.addUI.AddActivity
@@ -36,7 +34,6 @@ class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
     private val dateFormat = SimpleDateFormat("yyyy/MM/dd")
     private lateinit var auth: FirebaseAuth
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -46,12 +43,6 @@ class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
 
         if (auth.currentUser == null) {
             startActivity(Intent(this@MainActivity,LoginActivity::class.java))
-            /*
-            if (auth.currentUser!!.isEmailVerified) {
-                startActivity(Intent(this@LoginActivity, MainActivity::class.java))
-                finish()
-            }
-            */
         }
 
         val toolbar: Toolbar = findViewById(R.id.toolbar)
@@ -60,18 +51,17 @@ class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
         val toggle = ActionBarDrawerToggle(
             this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close
         )
+
         drawer.addDrawerListener(toggle)
         toggle.syncState()
         val navigationView = findViewById<View>(R.id.nav_view) as NavigationView
         navigationView.setNavigationItemSelectedListener(this)
-
 
         Realm.init(this)
         val realmConfiguration = RealmConfiguration.Builder().build()
         Realm.setDefaultConfiguration(realmConfiguration)
 
         realm = Realm.getDefaultInstance()
-
 
         //収支追加
         val fab: FloatingActionButton = this.findViewById(R.id.fab)
@@ -209,6 +199,10 @@ class MainActivity : AppCompatActivity() , NavigationView.OnNavigationItemSelect
             }
             R.id.nav_balance -> {
                 startActivity(Intent(this@MainActivity,BalanceActivity::class.java))
+            }
+            R.id.nav_logout ->{
+                auth.signOut()
+                startActivity(Intent(this@MainActivity, LoginActivity::class.java))
             }
         }
 

@@ -22,7 +22,7 @@ class AddViewAdapter(private val categoryList:ArrayList<String>,private val list
 
 
     /**
-     * RecyclerView1で表示するアイテムの個数
+     * RecyclerViewで表示するアイテムの個数
      */
     override fun getItemCount(): Int {
         return categoryList.size
@@ -32,9 +32,7 @@ class AddViewAdapter(private val categoryList:ArrayList<String>,private val list
      * Layoutの画像や文字を設定する
      */
     override fun onBindViewHolder(holder: AddViewHolder, position: Int) {
-        //holder.titleView.text = list[position].title
         holder.titleView.text = categoryList[position]
-        //holder.detailView.text = list[position].detail
         holder.itemView.setOnClickListener {
             listener.onClickRow(it, categoryList[position])
         }

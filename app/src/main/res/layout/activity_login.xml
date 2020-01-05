@@ -24,15 +24,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4dp"
-                android:text="メールアドレス"
+                android:text="@string/mailAddress"
                 android:textColor="#8d9399"
                 android:textSize="12sp" />
 
             <EditText
-                android:id="@+id/mail"
+                android:id="@+id/loginMailEditText"
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:background="@null"
+                android:layout_height="wrap_content"
                 android:inputType="text"
                 android:maxEms="15"
                 android:maxLines="1"
@@ -40,24 +39,21 @@
                 android:textColor="#788086"
                 android:textSize="16sp" />
 
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="4dp"
-                android:text="パスワード"
+                android:text="@string/password"
                 android:textColor="#8d9399"
                 android:textSize="12sp" />
 
             <EditText
+                android:id="@+id/loginPassEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@null"
-                android:enabled="false"
                 android:maxEms="12"
                 android:textColor="#788086"
                 android:textSize="16sp" />
-
 
             <Button
                 android:layout_width="match_parent"
@@ -65,18 +61,18 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="4dp"
                 android:gravity="center"
-                android:text="登録"
+                android:onClick="@{() -> activityLogin.loginClick()}"
+                android:text="@string/loginText"
                 android:textColor="#ffffff"
                 android:textStyle="bold" />
-
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="登録がお済みで無い方はこちら"/>
+                android:text="@string/unregistered"
+                android:onClick="@{() -> activityLogin.signUpClick()}"/>
 
         </LinearLayout>
     </RelativeLayout>
 
 </layout>
-<!--android:onClick="@{() -> activityLogin.signUpCliked()}" -->

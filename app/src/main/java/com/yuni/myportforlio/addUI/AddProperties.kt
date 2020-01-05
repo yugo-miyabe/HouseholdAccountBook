@@ -1,6 +1,5 @@
 package com.yuni.myportforlio.addUI
 
-import android.util.Log
 import androidx.databinding.ObservableField
 import io.reactivex.Observable
 import io.reactivex.disposables.Disposable
@@ -16,7 +15,6 @@ class AddProperties {
     private val categoryTextSubject = BehaviorSubject.create<String>()
 
     val dateOfUseValueField: ObservableField<String> = ObservableField()
-
     val canRegister: ObservableField<Boolean> = ObservableField()
 
     init {
@@ -31,9 +29,7 @@ class AddProperties {
             moneyTextSubject.onNext(value)
         }
 
-    private val calendar = Calendar.getInstance()
-
-    var dateOfUse : Calendar? = calendar
+    var dateOfUse : Calendar? = null
         set(value) {
             field = value
             value?.let {
@@ -55,7 +51,7 @@ class AddProperties {
 
 
     private val dateOfUseValidationObservable = dateOfUseSubject.map {
-        true
+        dateOfUse != null
     }
 
     private val categoryValidationObservable = categoryTextSubject.map {
@@ -71,7 +67,7 @@ class AddProperties {
                 Function3<Boolean,Boolean,Boolean,Boolean>{
                     isValidMoney,isValidDateOfUse,isCategory -> isValidMoney && isValidDateOfUse && isCategory
                 })
-            .subscribe({ canRegister.set(it) },{ Log.e("error", it.message) })
+                .subscribe { canRegister.set(it) }
     }
 }
 

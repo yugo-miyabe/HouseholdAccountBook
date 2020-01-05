@@ -20,6 +20,10 @@
             android:id="@+id/nav_balance"
             android:icon="@drawable/ic_account_balance_wallet_black_24dp"
             android:title="@string/menu_balance"/>
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_account_24dp"
+            android:title="ログアウト"/>
 
     </group>
 

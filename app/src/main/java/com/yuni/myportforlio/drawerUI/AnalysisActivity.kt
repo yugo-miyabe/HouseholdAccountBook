@@ -52,7 +52,7 @@ class AnalysisActivity : AppCompatActivity() {
         val thisMonthText = thisMonthNumber.toString() + "月の出費"
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.title = "分析"
+        supportActionBar?.title = getString(R.string.analysisTitle)
 
         //支出画面の設定
         val thisMonth = findViewById<TextView>(R.id.thisMonth)
@@ -151,11 +151,8 @@ class AnalysisActivity : AppCompatActivity() {
         mPie.setDrawEntryLabels(false)      //セクタ内の凡例を削除
 
         val desc = Description()
-        //desc.text = "PieChartのサンプルだよ"
-        //mPie.description = desc
         //ラベル非表示
         desc.isEnabled = false
-
 
         val legend: Legend? = mPie.legend
         legend?.horizontalAlignment = Legend.LegendHorizontalAlignment.LEFT

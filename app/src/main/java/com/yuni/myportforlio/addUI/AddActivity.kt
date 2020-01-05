@@ -38,7 +38,7 @@ class AddActivity : AppCompatActivity() {
 
         realm = Realm.getDefaultInstance()
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.title = "収支追加"
+        supportActionBar?.title = getString(R.string.addTitle)
 
         val binding  = DataBindingUtil.setContentView<ActivityAddBinding>(this, R.layout.activity_add)
         binding.activityAdd = this@AddActivity
@@ -55,7 +55,6 @@ class AddActivity : AppCompatActivity() {
             //修正の場合
             val realmDB = realm.where<WalletDB>()
                 .equalTo("id",bpId).findFirst()
-            //dateEditText.text = dateFormat.format(realmDB!!.date)
             dateEditText.text = realmDB!!.date.toString()
             memoEditText.setText(realmDB.memo)
             moneyEditText.setText(realmDB.money.toString())
@@ -84,10 +83,8 @@ class AddActivity : AppCompatActivity() {
         flgSpIn = false
         spendingButton.setBackgroundColor(Color.rgb(204,0,204)) //ピンク
         incomeButton.setBackgroundColor(Color.rgb(192,192,192)) //グレー
-        categoryEditText.text = "食費"
         categoryList = getSpendingCategoryList()
     }
-
 
     /**
      * 収入ボタンクリック
@@ -96,7 +93,6 @@ class AddActivity : AppCompatActivity() {
         flgSpIn = true
         incomeButton.setBackgroundColor(Color.rgb(204,0,204)) //ピンク
         spendingButton.setBackgroundColor(Color.rgb(192,192,192)) //グレー
-        categoryEditText.text = "給与所得"
         categoryList = getIncomeCategoryList()
     }
 
@@ -174,7 +170,7 @@ class AddActivity : AppCompatActivity() {
                 }
             }
         }
-        Toast.makeText(applicationContext, "保存しました", Toast.LENGTH_SHORT).show()
+        Toast.makeText(applicationContext, getText(R.string.savedButton), Toast.LENGTH_SHORT).show()
         finish()
     }
 
@@ -188,7 +184,7 @@ class AddActivity : AppCompatActivity() {
                 ?.findFirst()
                 ?.deleteFromRealm()
         }
-        Toast.makeText(applicationContext, "削除しました", Toast.LENGTH_SHORT).show()
+        Toast.makeText(applicationContext, getText(R.string.deletedButton), Toast.LENGTH_SHORT).show()
         finish()
     }
 
@@ -217,7 +213,7 @@ class AddActivity : AppCompatActivity() {
             val message = data.getStringExtra("categoryListIntent")
             categoryEditText.text = message
         } else if(resultCode == Activity.RESULT_CANCELED){
-            categoryEditText.text = "端末の戻るボタンが押されました"
+            categoryEditText.text = ""
         }
     }
 

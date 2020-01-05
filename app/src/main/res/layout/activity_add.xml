@@ -35,7 +35,6 @@
 
         </LinearLayout>
 
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -44,14 +43,14 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="match_parent"
-                android:text="￥"
+                android:text="@string/yenMark"
                 android:textSize="@android:dimen/app_icon_size" />
 
             <EditText
                 android:layout_width="0dp"
                 android:layout_weight="5"
                 android:layout_height="match_parent"
-                android:hint="0"
+                android:hint="@string/zero"
                 android:inputType="number"
                 android:text="@={activityAdd.properties.moneyText}"
                 android:textSize="@android:dimen/app_icon_size"
@@ -68,16 +67,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:onClick="@{() -> activityAdd.onDateClicked()}"
-                android:text="日付"
-                android:textSize="24dp"/>
+                android:text="@string/dateText"
+                android:textSize="24sp"/>
 
             <TextView
                 android:id="@+id/dateEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:onClick="@{() -> activityAdd.onDateClicked()}"
                 android:text="@={activityAdd.properties.dateOfUseValueField}"
-                android:textSize="24dp"/>
+                android:textSize="24sp"/>
 
         </LinearLayout>
 
@@ -90,16 +90,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:onClick="@{() -> activityAdd.onCategoryEditText()}"
-                android:text="項目"
-                android:textSize="24dp"/>
+                android:text="@string/itemSpendingText"
+                android:textSize="24sp"/>
 
             <TextView
                 android:id="@+id/categoryEditText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:gravity="center"
                 android:text="@={activityAdd.properties.category}"
                 android:onClick="@{() -> activityAdd.onCategoryEditText()}"
-                android:textSize="24dp"/>
+                android:textSize="24sp"/>
 
         </LinearLayout>
 
@@ -112,7 +113,7 @@
                 android:id="@+id/memoEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="メモ"
+                android:hint="@string/memo"
                 android:maxLength="20" />
 
         </LinearLayout>
@@ -132,7 +133,7 @@
                 android:enabled="@{activityAdd.properties.canRegister ? true : false}"
                 android:onClick="@{() -> activityAdd.onRegisterClicked()}"
                 android:gravity="center"
-                android:text="記録する" />
+                android:text="@string/recordButton" />
 
             <Button
                 android:id="@+id/deleteButton"
@@ -140,7 +141,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:onClick="@{() -> activityAdd.onDeleteClicked()}"
-                android:text="削除"/>
+                android:text="@string/deleteButton"/>
 
         </LinearLayout>
 
