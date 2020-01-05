@@ -12,6 +12,7 @@
     <string name="menu_history">履歴</string>
     <string name="menu_analysis">分析</string>
     <string name="menu_balance">残高</string>
+    <string name="menu_logout">ログイアウト</string>
     <string name="nav_tools">設定</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="menu_tools">設定</string>

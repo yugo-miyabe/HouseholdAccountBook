@@ -23,7 +23,7 @@
         <item
             android:id="@+id/nav_logout"
             android:icon="@drawable/ic_account_24dp"
-            android:title="ログアウト"/>
+            android:title="@string/menu_logout"/>
 
     </group>
 
