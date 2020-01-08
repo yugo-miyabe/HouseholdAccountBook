@@ -8,37 +8,9 @@
             type="com.yuni.myportforlio.drawerUI.HistoryActivity" />
     </data>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/graphSpendingButton"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="@string/SpendingString"/>
-
-            <Button
-                android:id="@+id/graphIncomeButton"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="@string/IncomeString"/>
-
-        </LinearLayout>
-
-        <androidx.recyclerview.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/historyView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
-
-    </LinearLayout>
 
 </layout>

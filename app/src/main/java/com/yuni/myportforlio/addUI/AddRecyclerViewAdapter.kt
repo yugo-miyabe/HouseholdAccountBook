@@ -6,18 +6,18 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.yuni.myportforlio.R
 
-class AddViewAdapter(private val categoryList:ArrayList<String>,private val listener: ListListener)
-    : RecyclerView.Adapter<AddViewHolder>() {
+class AddRecyclerViewAdapter(private val categoryList:ArrayList<String>, private val listener: ListListener)
+    : RecyclerView.Adapter<AddRecyclerViewHolder>() {
 
     /**
      * Layoutを設定
      */
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AddViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AddRecyclerViewHolder {
         //LayoutInflaterは、指定したxmlのレイアウト(View)リソースを利用できる
         val view: View =
             LayoutInflater.from(parent.context).inflate(R.layout.list_item, parent, false)
 
-        return AddViewHolder(view)
+        return AddRecyclerViewHolder(view)
     }
 
 
@@ -31,9 +31,9 @@ class AddViewAdapter(private val categoryList:ArrayList<String>,private val list
     /**
      * Layoutの画像や文字を設定する
      */
-    override fun onBindViewHolder(holder: AddViewHolder, position: Int) {
-        holder.titleView.text = categoryList[position]
-        holder.itemView.setOnClickListener {
+    override fun onBindViewHolder(holderRecycler: AddRecyclerViewHolder, position: Int) {
+        holderRecycler.titleView.text = categoryList[position]
+        holderRecycler.itemView.setOnClickListener {
             listener.onClickRow(it, categoryList[position])
         }
     }

@@ -26,7 +26,7 @@ class AddRecyclerActivity : AppCompatActivity() {
 
         val recyclerView = category_recycler_list
 
-        val adapter = AddViewAdapter(categoryList,object : AddViewAdapter.ListListener{
+        val adapter = AddRecyclerViewAdapter(categoryList,object : AddRecyclerViewAdapter.ListListener{
             override fun onClickRow(tappedView: View, category: String) {
                 this@AddRecyclerActivity.onClickRow(category)
             }
